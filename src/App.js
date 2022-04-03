@@ -4,6 +4,7 @@ import About from './Components/About/About';
 import DashBoard from './Components/Dashboard/DashBoard';
 import Header from './Components/Header/Header';
 import Home from './Components/Home/Home';
+import RiviewHome from './Components/ReviewHome/RiviewHome';
 import Riview from './Components/Riview/Riview';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <Header></Header>
   <Routes>
 <Route path="/" element={<Home></Home>}></Route>
+<Route path="/" element={<RiviewHome></RiviewHome>}></Route>
 <Route path="/riview" element={<Riview></Riview> }></Route>
 <Route path="/dashboard" element={<DashBoard></DashBoard> }></Route>
 <Route path="/about" element={<About></About>}></Route>
