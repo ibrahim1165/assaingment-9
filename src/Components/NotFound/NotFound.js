@@ -1,4 +1,5 @@
 import React from 'react'
+import CustomLink from '../CustomLink/CustomLink'
 
 const NotFound = () => {
   return (
@@ -11,15 +12,9 @@ const NotFound = () => {
           <h1 className='mb-4 text-2xl font-extrabold leading-tight tracking-tight text-left text-gray-900 md:text-4xl'>
             Oops! The page you're looking for isn't here.
           </h1>
-          <p className='mb-5 text-base text-left text-gray-800 md:text-xl'>
-            You might have the wrong address, or the page may have moved.
-          </p>
-          <button className='w-full mb-2 py-2 px-3 text-white mt-3 bg-cyan-600 sm:w-auto sm:mb-0'>
+          <CustomLink to="/" className='w-full mb-2 py-2 px-3 text-white mt-3 bg-cyan-600 sm:w-auto sm:mb-0'>
             Back to homepage
-          </button>
-          <button className='w-full mb-2 py-2 px-3 text-white mt-3 mx-2 bg-cyan-600 sm:w-auto sm:mb-0'>
-            Contact us
-          </button>
+          </CustomLink>
         </div>
         <div>
           <div className='w-full h-full bg-gray-200 rounded-lg'>
