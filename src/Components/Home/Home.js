@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import RiviewHome from '../ReviewHome/RiviewHome'
 
-const Home = () => {
+const Home = ({rivew}) => {
+//    const {name,image,comment,Rating}=rivew
     return (
         <div>
             <div className="flex items-center justify-center cols md:cols-2 px-12">
@@ -19,12 +21,8 @@ const Home = () => {
         </div>
 
         <div className="text-3xl flex items-center justify-center mt-20 "> 
-            <h2> Riview Product(3)</h2>
-            <div>
-
-            </div>
-        </div>
-        </div>
+          <RiviewHome />
+            </div> </div> 
     );
 };
 
