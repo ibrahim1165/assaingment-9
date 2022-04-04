@@ -41,7 +41,7 @@ const data = [
 
 const DashBoard = () => {
     return (
-       <div className="flex item-center gap-20 px-6 mx-4 grid gird-cols-1 md:grid-cols-2 mt-4">
+       <div className="flex item-center gap-20 px-6 mx-4 grid md:grid-cols-2 mt-4">
         <LineChart width={600} height={300} data={data} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
         <Line type="investment" dataKey="sell" stroke="#8884d8" />
         <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
