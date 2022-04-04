@@ -1,5 +1,5 @@
 import React from 'react';
-import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, BarChart,bar,BarTooltip, Legend, Bar, ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, } from 'recharts';
+import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, BarChart,bar,BarTooltip, Legend, Bar,ResponsiveContainer, PieChart, Pie, ReferenceLine, } from 'recharts';
 const data = [
     {
         "month": "Mar",
@@ -62,12 +62,27 @@ const DashBoard = () => {
      </div>
      <div>
      <ResponsiveContainer width="100%" height="100%">
-        <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
-          <PolarGrid />
-          <PolarAngleAxis dataKey="sell" />
-          <PolarRadiusAxis />
-          <Radar name="month" dataKey="investment" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6}/>
-        </RadarChart>
+        <BarChart
+          width={500}
+          height={300}
+          data={data}
+          stackOffset="sign"
+          margin={{
+            top: 5,
+            right: 30,
+            left: 20,
+            bottom: 5,
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <ReferenceLine y={0} stroke="#000" />
+          <Bar dataKey="revenue" fill="#8884d8" stackId="stack" />
+          <Bar dataKey="investment" fill="#82ca9d" stackId="stack" />
+        </BarChart>
       </ResponsiveContainer>
      </div>
        </div> 
