@@ -1,5 +1,5 @@
 import React from 'react';
-import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, BarChart,bar,BarTooltip, Legend, Bar,ResponsiveContainer, PieChart, Pie, ReferenceLine, } from 'recharts';
+import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, BarChart,bar,BarTooltip, Legend, Bar,ResponsiveContainer, PieChart, Pie, ReferenceLine, PolarAngleAxis, PolarRadiusAxis, Radar, PolarGrid, RadarChart, ComposedChart, Area, } from 'recharts';
 const data = [
     {
         "month": "Mar",
@@ -41,7 +41,9 @@ const data = [
 
 const DashBoard = () => {
     return (
-       <div className="flex item-center gap-20 px-6 mx-4 grid md:grid-cols-2 mt-4">
+       <div className="flex item-center gap-20 px-6 mx-4 mt-5 grid md:grid-cols-2 mt-4">
+         <div>
+         <h1 className="text-2xl text-bold my-2">LineChart</h1>
         <LineChart width={600} height={300} data={data} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
         <Line type="investment" dataKey="sell" stroke="#8884d8" />
         <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
@@ -49,8 +51,10 @@ const DashBoard = () => {
         <YAxis />
         <Tooltip />
       </LineChart>
+         </div>
 
      <div>
+       <h1 className="text-2xl text-bold my-2">BarChart</h1>
      <BarChart width={600} height={300} data={data}>
     <XAxis dataKey="sell" stroke="#8884d8" />
     <YAxis />
@@ -61,29 +65,28 @@ const DashBoard = () => {
   </BarChart>
      </div>
      <div>
-     <ResponsiveContainer width="100%" height="100%">
-        <BarChart
-          width={500}
-          height={300}
-          data={data}
-          stackOffset="sign"
-          margin={{
-            top: 5,
-            right: 30,
-            left: 20,
-            bottom: 5,
-          }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <ReferenceLine y={0} stroke="#000" />
-          <Bar dataKey="revenue" fill="#8884d8" stackId="stack" />
-          <Bar dataKey="investment" fill="#82ca9d" stackId="stack" />
-        </BarChart>
-      </ResponsiveContainer>
+     <h2 className="text-3xl text-bold">RadarChart</h2>
+     <RadarChart outerRadius={90} width={730} height={250} data={data}>
+  <PolarGrid />
+  <PolarAngleAxis dataKey="sell" />
+  <PolarRadiusAxis angle={30} domain={[0, 150]} />
+  <Radar name="month" dataKey="revenue" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
+  <Radar name="month" dataKey="investment" stroke="#82ca9d" fill="#82ca9d" fillOpacity={0.6} />
+  <Legend />
+</RadarChart>
+     </div>
+     <div>
+       <h1 className="text-2xl text-bold my-2">ComposedChart</h1>
+     <ComposedChart width={630} height={300} data={data}>
+  <XAxis dataKey="month" />
+  <YAxis />
+  <Tooltip />
+  <Legend />
+  <CartesianGrid stroke="#f5f5f5" />
+  <Area type="monotone" dataKey="sell" fill="#8884d8" stroke="#8884d8" />
+  <Bar dataKey="revenue" barSize={20} fill="#413ea0" />
+  <Line type="monotone" dataKey="investment" stroke="#ff7300" />
+</ComposedChart>
      </div>
        </div> 
                  
