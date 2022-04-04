@@ -13,7 +13,7 @@ const RiviewTreeItem = ({rivew}) => {
         <div className="mx-3 my-3 px-6 font-medium">
             <p>Name:{name}</p>
             <p> Comment:<small className="text-sm text-gray-600">{comment}</small> </p>
-            <p className="text-cyan-400 text-sm">Rating: <span>{Rating}</span></p>
+            <p className="text-cyan-400 text-sm ">Rating: <span>{Rating}</span></p>
         </div>
 </div>
     </div>
