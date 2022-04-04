@@ -5,7 +5,7 @@ const Home = ({rivew}) => {
 //    const {name,image,comment,Rating}=rivew
     return (
         <div>
-            <div className="flex items-center justify-center cols md:cols-2 px-12">
+            <div className="flex items-center justify-center grid md:grid-cols-2 px-12">
            <div>
                <h2 className="text-3xl px-5 py-2 text-gray-800 order-2 md:order-1"> <p>Smart Android Led Tv</p> Monitor</h2>
                <p className="font-medium px-5 py-3 font-bold font-size-10 text-gray-500">The latest price of Starex 32” <br/>
